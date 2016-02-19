@@ -1,6 +1,6 @@
-## Writing two functions to calculate inverse of matrix and cache it
+##  This file contains wo functions to calculate inverse of matrix and cache it
 
-## Write a short comment describing this function
+## returns list or vector of functions that help to cache a matrix's inverse 
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -17,17 +17,16 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## 
-
-## 
+## Return a matrix that is the inverse of 'x' 
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+
   i <- x$getinverse()
   if(!is.null(i)) {
     message("getting cached data")
     return(i)
   }
+  
   data <- x$get()
   i <- solve(data, ...)
   x$setinverse(i)
